@@ -4,30 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 5 - Próximo Reto</title>
+    <title>Ejercicio 5 - Objetos Anizados</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body class="bg-slate-900 text-slate-100 min-h-screen flex items-center justify-center font-sans antialiased">
 
     <div
-        class="max-w-md w-full mx-4 p-8 bg-slate-800/60 rounded-3xl border border-slate-700/60 text-center backdrop-blur-md shadow-xl">
-
-        <span class="text-xs font-mono text-fuchsia-400 bg-fuchsia-400/10 px-2.5 py-1 rounded-md">Ejercicio 5</span>
+        class="max-w-xl w-full mx-4 p-8 bg-slate-800/60 rounded-3xl border border-slate-700/60 text-center backdrop-blur-md shadow-xl">
+        <span class="text-xs font-mono text-fuchsia-400 bg-fuchsia-400/10 px-2.5 py-1 rounded-md">Ejercicio 05</span>
 
         <h1 class="mt-4 text-2xl font-bold text-white">Objetos Anidados</h1>
-        <p class="mt-2 text-sm text-slate-400 max-w-xs mx-auto">Extraer datos de sub-objetos internos ("direccion")
-            junto
-            con propiedades raíz en una sola línea</p>
+        <p class="mt-2 text-sm text-slate-400 max-w-md mx-auto">Acceder y desestructurar claves que se encuentran dentro
+            de sub-objetos internos o ramas estructurales profundas en un único paso.</p>
+
+        <div class="mt-6 text-left space-y-4">
+            <div>
+                <span class="text-[11px] font-mono text-slate-500 uppercase tracking-wider block mb-1.5">Datos de
+                    Entrada:</span>
+                <pre
+                    class="bg-slate-900/90 p-4 rounded-xl border border-slate-700/50 font-mono text-xs text-slate-300 overflow-x-auto">
+const cliente = {
+    id: "CLI-992",
+    nombre: "Laura",
+    direccion: {
+        ciudad: "Barcelona",
+        codigoPostal: "08001",
+        pais: "España"
+    }
+};</pre>
+            </div>
+
+            <div>
+                <span class="text-[11px] font-mono text-slate-500 uppercase tracking-wider block mb-1.5">Destructuración
+                    Aplicada:</span>
+                <pre
+                    class="bg-slate-900/90 p-4 rounded-xl border border-slate-700/50 font-mono text-xs text-fuchsia-300 overflow-x-auto border-l-2 border-l-fuchsia-500">
+const { nombre, direccion: { ciudad, pais } } = cliente;</pre>
+            </div>
+        </div>
 
         <div
-            class="my-6 p-4 bg-slate-900/80 rounded-xl border border-slate-700 font-mono text-xs text-left text-emerald-400 flex items-center gap-3">
-            <span class="flex h-2 w-2 relative">
-                <span
-                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span>Abre la consola (F12 o FN + F12) para ver el resultado</span>
+            class="my-6 p-4 bg-slate-900/80 rounded-xl border border-slate-700 font-mono text-xs text-left text-emerald-400 flex flex-col gap-2">
+            <div class="flex items-center gap-3">
+                <span class="flex h-2 w-2 relative">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span>Resultado esperado: <code class="text-white font-bold">Laura Barcelona España</code></span>
+            </div>
+            <div class="pl-5 text-slate-400 border-t border-slate-700/50 pt-2 mt-1 text-[11px]">
+                Abre la consola (<kbd
+                    class="px-1 py-0.5 bg-slate-800 rounded border border-slate-700 text-slate-300">F12</kbd> o <kbd
+                    class="px-1 py-0.5 bg-slate-800 rounded border border-slate-700 text-slate-300">FN + F12</kbd>) para
+                confirmar el resultado en tiempo real.
+            </div>
         </div>
 
         <a href="../index.html"

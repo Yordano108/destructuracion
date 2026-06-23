@@ -11,21 +11,51 @@
 <body class="bg-slate-900 text-slate-100 min-h-screen flex items-center justify-center font-sans antialiased">
 
     <div
-        class="max-w-md w-full mx-4 p-8 bg-slate-800/60 rounded-3xl border border-slate-700/60 text-center backdrop-blur-md shadow-xl">
-        <span class="text-xs font-mono text-indigo-400 bg-indigo-400/10 px-2.5 py-1 rounded-md">Ejercicio 3</span>
+        class="max-w-xl w-full mx-4 p-8 bg-slate-800/60 rounded-3xl border border-slate-700/60 text-center backdrop-blur-md shadow-xl">
+        <span class="text-xs font-mono text-indigo-400 bg-indigo-400/10 px-2.5 py-1 rounded-md">Ejercicio 03</span>
 
         <h1 class="mt-4 text-2xl font-bold text-white">Valores por Defecto</h1>
-        <p class="mt-2 text-sm text-slate-400 max-w-xs mx-auto">Definición de un valor de respaldo (`idioma = "es"`)
-            para cuando la propiedad no existe en el objeto</p>
+        <p class="mt-2 text-sm text-slate-400 max-w-md mx-auto">Prevenir valores <code
+                class="text-indigo-300 font-mono">undefined</code> configurando un respaldo o "fallback" en caso de que
+            la propiedad no exista.</p>
+
+        <div class="mt-6 text-left space-y-4">
+            <div>
+                <span class="text-[11px] font-mono text-slate-500 uppercase tracking-wider block mb-1.5">Datos de
+                    Entrada:</span>
+                <pre
+                    class="bg-slate-900/90 p-4 rounded-xl border border-slate-700/50 font-mono text-xs text-slate-300 overflow-x-auto">
+const config = {
+    tema: "Oscuro"
+    // El idioma no viene aquí
+};</pre>
+            </div>
+
+            <div>
+                <span class="text-[11px] font-mono text-slate-500 uppercase tracking-wider block mb-1.5">Destructuración
+                    Aplicada:</span>
+                <pre
+                    class="bg-slate-900/90 p-4 rounded-xl border border-slate-700/50 font-mono text-xs text-indigo-300 overflow-x-auto border-l-2 border-l-indigo-500">
+const { tema, idioma = "es" } = config;</pre>
+            </div>
+        </div>
 
         <div
-            class="my-6 p-4 bg-slate-900/80 rounded-xl border border-slate-700 font-mono text-xs text-left text-emerald-400 flex items-center gap-3">
-            <span class="flex h-2 w-2 relative">
-                <span
-                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span>Abre la consola (F12 o FN + F12) para ver el resultado</span>
+            class="my-6 p-4 bg-slate-900/80 rounded-xl border border-slate-700 font-mono text-xs text-left text-emerald-400 flex flex-col gap-2">
+            <div class="flex items-center gap-3">
+                <span class="flex h-2 w-2 relative">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span>Resultado esperado: <code class="text-white font-bold">"Oscuro" "es"</code></span>
+            </div>
+            <div class="pl-5 text-slate-400 border-t border-slate-700/50 pt-2 mt-1 text-[11px]">
+                Abre la consola (<kbd
+                    class="px-1 py-0.5 bg-slate-800 rounded border border-slate-700 text-slate-300">F12</kbd> o <kbd
+                    class="px-1 py-0.5 bg-slate-800 rounded border border-slate-700 text-slate-300">FN + F12</kbd>) para
+                confirmar el resultado en tiempo real.
+            </div>
         </div>
 
         <a href="../index.html"
